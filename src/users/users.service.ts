@@ -10,7 +10,6 @@ export class UsersService {
 
     async getUsers(users: User) {
 
-
         return users
 
     }

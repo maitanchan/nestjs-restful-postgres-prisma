@@ -12,6 +12,7 @@ import { PrismaModule } from './prisma/prisma.module';
     ConfigModule.forRoot({
 
       isGlobal: true,
+
       envFilePath: '.env'
 
     }),

@@ -8,7 +8,7 @@ import { PrismaService } from "../../prisma/prisma.service";
 export class JwtStrategy extends PassportStrategy(Strategy) {
 
     constructor(
-        private readonly config: ConfigService,
+        config: ConfigService,
         private readonly prisma: PrismaService
     ) {
 

@@ -21,7 +21,9 @@ export class BookmarksService {
         const bookmark = await this.prisma.bookmark.findUnique({ where: { id: bookmarkId } })
 
         if (!bookmarkId || bookmark.userId !== userId) {
+
             throw new HttpException("Access to resource denied", HttpStatus.FORBIDDEN)
+
         }
 
         return this.prisma.bookmark.update({ where: { id: bookmarkId }, data: { ...updateBookmarkDto } })
@@ -46,7 +48,9 @@ export class BookmarksService {
         const bookmark = await this.prisma.bookmark.findUnique({ where: { id: bookmarkId } })
 
         if (!bookmarkId || bookmark.userId !== userId) {
+
             throw new HttpException("Access to resource denied", HttpStatus.FORBIDDEN)
+
         }
 
         await this.prisma.bookmark.delete({ where: { id: bookmarkId } })
